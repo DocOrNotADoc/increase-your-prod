@@ -1,0 +1,249 @@
+@import "./libs/normalise";
+@import "./libs/bootstrap-reboot.min";
+@import "./libs/bootstrap-grid.min";
+
+@import url("https://fonts.googleapis.com/css2?Quicksand:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
+
+// === MIXIN === 
+@mixin roboto {
+  font-family: 'Roboto', sans-serif;
+}
+@mixin quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+// === / MIXIN === 
+
+
+// === VARIABLES === 
+$base: 4px;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+$fz-sm: 12px;
+$fz-md: 15px;
+
+$color-divider: #d8e3fe;
+$bg-color: #f5f8ff;
+
+$color-primary: #5e81fe;
+$color-text_links: #697ca6;
+$color-icon_links: #b6bac7;
+
+
+$padding-vertical-xs: $base * 5;
+$padding-vertical-sm: $base * 12;
+$padding-vertical: $base * 30;
+
+$transition: .2s;
+// === / VARIABLES ===
+
+
+// === COMMON === 
+body {
+  @include roboto;
+}
+.section-outer {
+  border-bottom: 1px solid $color-divider;
+}
+.section-inner {
+  margin: 0 auto;
+  padding: $padding-vertical 0;
+  max-width: 900px;
+  &--wide {
+    max-width: 1200px;
+  }
+}
+.btn {
+  @include quicksand;
+
+  margin: 0;
+  padding: $base*3 $base*4;
+  border: 0;
+  border-radius: 2px;
+  background-color: none;
+  font-size: $fz-sm;
+  font-weight: $fw-bold;
+  text-decoration: none;
+  transition: $transition;
+  &-header {
+    margin-left: $base * 11;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  &-primary {
+    color: #3a79ff;
+    background-color: #d2e1ff;
+    &:hover {
+      background-color: darken(#d4e2fa, 3%);
+    }
+  }
+}
+// === / COMMON ===
+
+
+// === HEADER ===
+.section-header {
+  .section-inner {
+    padding: $padding-vertical-xs 0;
+  }
+}
+.main-navigation {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: $base * 6;
+  height: $base * 6;
+  background-color: $color-primary;
+  border-radius: 100%;
+}
+.nav {
+  margin-left: $base * 18;
+  &-wrapper {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &__item {
+      & + & {
+        margin-left: $base * 10;
+      }
+      &-link {
+        @include quicksand;
+        font-size: $fz-sm;
+        font-weight: $fw-medium;
+        color: $color-text_links;
+        text-decoration: none;
+        transition: $transition;
+        &--active {
+          font-weight: $fw-bold;
+          color: $color-primary;
+        }
+        &:hover {
+          color: #5e81fe;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.socials {
+  margin-left: auto;
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &__item {
+      & + & {
+        margin-left: $base * 9;
+      }
+      path {
+        fill: $color-icon_links;
+        transition: $transition;
+        &:hover {
+          fill: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+// ===  / HEADER ===
+
+
+// === HERO-IMAGE ===
+.section-hero-image {
+  background-color: #f4f7ff;
+}
+// === / HERO-IMAGE ===
+
+
+// === CUSTOMERS ===
+.section-customers {
+  .section-inner {
+    padding: $padding-vertical-sm 0;
+  }
+}
+// === / CUSTOMERS ===
+
+
+// === PLAN-AND-MANAGE ===
+.section-plan-and-manage {
+  background-color: $bg-color;
+}
+// === / PLAN-AND-MANAGE ===
+
+
+// === FIATURES ===
+.section-fiatures {
+
+}
+// === / FIATURES ===
+
+
+// === STATS ===
+.section-stats {
+  background-color: #e9efff;
+  .section-inner {
+    padding: $padding-vertical-sm 0;
+  }
+}
+// === / STATS ===
+
+
+// === BLOG ===
+.section-blog {
+
+}
+// === / BLOG ===
+
+
+// === QUOTES ===
+.section-quotes {
+  background-color: #eaf0ff;
+}
+// === / QUOTES ===
+
+
+// === GET-STARTED ===
+.section-get-started {
+  background-color: #6888ff;
+}
+// === / GET-STARTED ===
+
+
+// === FAQ ===
+.section-faq {
+
+}
+// === / FAQ ===
+
+
+// === NEWSLATTER ===
+.section-newslatter {
+  background-color: #fcfdff;
+}
+// === / NEWSLATTER ===
+
+
+// === FOOTER ===
+.section-footer {
+  border-bottom: 0;
+  .section-inner {
+    padding: $padding-vertical-sm 0;
+  }
+}
+.copyright {
+  @include quicksand;
+  margin-top: $base * 7;
+  margin-left: $base * 24;
+  font-size: $fz-sm;
+  font-weight: $fw-medium;
+  color: $color-icon_links;
+}
+// === / FOOTER ===
+// 28:37
