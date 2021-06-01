@@ -2,7 +2,8 @@
 @import "./libs/bootstrap-reboot.min";
 @import "./libs/bootstrap-grid.min";
 
-@import url("https://fonts.googleapis.com/css2?Quicksand:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap");
+// скачанный quicksand - 300тонкий
 
 // === MIXIN === 
 @mixin roboto {
@@ -17,11 +18,15 @@
 // === VARIABLES === 
 $base: 4px;
 
+$fw-light: 300;
 $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
 $fz-sm: 12px;
 $fz-md: 15px;
+$fz-ttl-sm: 24px;
+$fz-ttl-md: 36px;
+$fz-ttl-l: 48px;
 
 $color-divider: #d8e3fe;
 $bg-color: #f5f8ff;
@@ -29,6 +34,8 @@ $bg-color: #f5f8ff;
 $color-primary: #5e81fe;
 $color-text_links: #697ca6;
 $color-icon_links: #b6bac7;
+$color-ttl: #3d4f9f;
+$color-descr: #8d96bd;
 
 
 $padding-vertical-xs: $base * 5;
@@ -77,6 +84,51 @@ body {
     background-color: #d2e1ff;
     &:hover {
       background-color: darken(#d4e2fa, 3%);
+    }
+  }
+}
+.hide {
+  display: none;
+}
+.ttl {
+  @include quicksand;
+  margin: 0;
+  padding: 0;
+  color: $color-ttl;
+  &__hero-image {
+    font-weight: $fw-light;
+    font-size: $fz-ttl-l;
+    margin-top: $base * 4;
+  }
+  span {
+    font-weight: $fw-medium;
+  }
+}
+.subttl {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: $color-ttl;
+  font-weight: $fw-medium;
+}
+.dots {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: $transition;
+  &__item {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: #d1d6e3;
+    cursor: pointer;
+    & + & {
+      margin-left: $base*3;
+    }
+    &--active {
+      background-color: $color-primary;
     }
   }
 }
@@ -158,13 +210,57 @@ body {
 // === HERO-IMAGE ===
 .section-hero-image {
   background-color: #f4f7ff;
-  slider-hero-image {
-    list-style: none;
+  position: relative;
+  .dots {
+    position: absolute;
+    bottom: $base*7;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .slider-hero-image {
     margin: 0;
     padding: 0;
+    list-style: none;
     &__item {
-
+      background: url(../img/bg/hero-image.png);
+      padding-top: $base * 23;
+      height: $base * 140;
+      background-position: 50% 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+      .text {
+        width: $base * 117;
+        margin: 28px auto 0 auto;
+        font-size: 15px;
+        font-weight: $fw-regular;
+        line-height: 1.9;
+        color: $color-descr;
+      }
     }
+  }
+}
+.icon-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: $base*5 auto 0 auto;
+  width: $base * 13;
+  height: $base * 13;
+  border-radius: 100%;
+  background-color: #fff;
+  box-shadow: 0 10px 50px rgba(#C9D1E7, .6);
+  &::before {
+    display: block;
+    margin-left: 15px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-color: transparent;
+    border-width: 7px 12px;
+    border-style: solid;
+    border-left-color: $color-primary;
+
   }
 }
 // === / HERO-IMAGE ===
