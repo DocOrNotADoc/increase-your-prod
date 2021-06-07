@@ -270,6 +270,19 @@ body {
 .section-customers {
   .section-inner {
     padding: $padding-vertical-sm 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // fill active (hover) #5982E7
+    // passive - #D6DAE5 (at start)
+    a {
+      opacity: .3;
+      transition: $transition;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    
   }
 }
 // === / CUSTOMERS ===
