@@ -12,6 +12,11 @@
 @mixin quicksand {
   font-family: 'Quicksand', sans-serif;
 }
+@mixin list-null {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 // === / MIXIN === 
 
 
@@ -147,7 +152,7 @@ body {
     font-size: $fz-ttl-md;
     margin-top: $base * 7;
   }
-  &__features {
+  &__sm {
     margin-top: $base * 5;
     text-align: center;
     font-size: $fz-ttl-sm;
@@ -162,12 +167,15 @@ body {
   text-transform: uppercase;
   color: $color-ttl;
   font-weight: $fw-medium;
+  &__plan-and-manage {
+    margin-top: $base * 22;
+    text-align-last: left;
+  }
 }
 .dots {
+  @include list-null;
   display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  justify-content: center;
   transition: $transition;
   &__item {
     width: 8px;
@@ -356,10 +364,6 @@ body {
       top: 0;
       left: 64%;
     }
-    .subttl {
-      margin-top: $base * 22;
-      text-align-last: left;
-    }
     .text {
       margin-top: $base * 7;
       width: $base * 97;
@@ -386,11 +390,9 @@ body {
   }
 }
 .features-list {
+  @include list-null;
   display: flex;
   justify-content: space-around;
-  margin: 0;
-  padding: 0;
-  list-style: none;
   text-align: center;
   
   &__item {
@@ -493,7 +495,19 @@ body {
 
 // === BLOG ===
 .section-blog {
-
+  background-color: #f5f8ff;
+  .dots {
+    margin-top: $base*25;
+  }
+}
+.slider-blog {
+  @include list-null;
+  margin-top: $base*23;
+  background-color: #fff;
+  border: 1px solid d8e3fe;
+  &__item {
+    padding: $base*16 $base*8;
+  }
 }
 // === / BLOG ===
 
