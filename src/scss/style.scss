@@ -183,6 +183,10 @@ body {
     margin-top: $base * 22;
     text-align-last: left;
   }
+  &__customers {
+    margin-top: $base*8;
+    text-align-last: left;
+  }
 }
 .dots {
   @include list-null;
@@ -205,7 +209,7 @@ body {
 }
 .text {
   font-size: 15px;
-  font-weight: $fw-regular;
+  font-weight: $fw-medium;
   line-height: 1.9;
   color: $color-descr;
 }
@@ -630,7 +634,62 @@ body {
 
 // === QUOTES ===
 .section-quotes {
-  background-color: #eaf0ff;
+  background: linear-gradient(#eaebff, #f6f9ff);
+  .section-inner {
+    padding: $base*27 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__left, &__right {
+    flex-basis: 45%;
+  }
+  &__left {
+
+  }
+  &__right {
+    
+  }
+
+
+  .text {
+    margin-top: 14px;
+    width: $base*80;
+  }
+  .dots {
+    margin-top: $base*20;
+  }
+}
+
+.slider-quotes {
+  @include list-null;
+
+  &__item {
+    position: relative;
+    width: 423px;
+    height: 175px;
+    padding: $base*10 $base*17 $base*15 $base*17;
+    background-color: #fff;
+    border: 1px solid $color-divider;
+    box-shadow: 0 5px 50px #f3f5fa;
+
+    &-text{
+      font-size: 14px;
+      color: #676f95;
+      line-height: 1.9;
+    }
+    &-photo {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: -$base*8;
+      width: $base*16;
+      height: $base*16;
+      overflow: hidden;
+      background-color: #fff;
+      border-radius: 100%;
+    }
+  }
 }
 // === / QUOTES ===
 
