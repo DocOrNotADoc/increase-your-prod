@@ -72,13 +72,17 @@ body {
 
   margin: 0;
   padding: $base*3 $base*4;
+  height: $base*11;
   border: 1px solid transparent;
   border-radius: 2px;
   background: none;
   font-size: $fz-sm;
   font-weight: $fw-bold;
+  text-align: center;
   text-decoration: none;
+  white-space: nowrap;
   transition: $transition;
+  cursor: pointer;
   &-group {
     display: inline-flex;
     .btn {
@@ -94,9 +98,6 @@ body {
   }
   &-header {
     margin-left: $base * 11;
-  }
-  &:hover {
-    text-decoration: none;
   }
   &-primary {
     color: #3a79ff;
@@ -136,6 +137,21 @@ body {
     &:hover {
       color: #3a79ff;
       background-color: lighten(#d2e1ff, 6%);
+    }
+  }
+  &-faq {
+    width: $base*49;
+    background-color: #e8ecf4;
+    font-weight: $fw-medium;
+    margin-top: $base*2;
+    a {
+      color: #7382A3;
+    }
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
     }
   }
 }
@@ -703,7 +719,79 @@ body {
 
 // === FAQ ===
 .section-faq {
+  .section-inner {
+    // width: 743px;
+    width: $base*186;
+    margin: 0 auto;
+  }
+}
 
+.faq-accordeon {
+  @include list-null;
+
+  margin-top: $base*16;
+  &__item {
+    $parent: &;
+    border-bottom: 1px solid #b8e3fe;
+
+    &--active {
+      #{$parent}-trigger {
+        // stroke: #495274;
+        &-icon {
+          transform: rotate(0deg);
+          .arrow {
+            stroke: #495274;
+          }
+        }
+        &-text {
+          color: #495274;
+          font-size: 15px;
+          font-weight: $fw-bold;
+        }
+      }
+      #{$parent}-content {
+        display: flex;
+      }
+    }
+
+    &-trigger {
+      @include quicksand;
+      display: flex;
+      padding: $base*4;
+      cursor: pointer;
+      // stroke: $color-descr;
+      &-icon {
+        margin: 0 $base*6 0 $base*4;
+        transform: rotate(180deg);
+        .arrow {
+          stroke: $color-descr;
+        }
+      }
+      &-text {
+        color: $color-descr;
+        font-size: 15px;
+        font-weight: $fw-medium;
+      }
+    }
+    &-content {
+      display: none;
+      padding: 0 $base*4 $base*11 0;
+      &-text {
+        width: $base*99;
+        margin: 0 $base*15 0 $base*23;
+        font-size: 14px;
+        font-weight: $fw-regular;
+        line-height: 1.9;
+        color: $color-descr;
+      }
+      // &-btn-wrapper {
+      //   width: $base*49;
+      // }
+    }
+
+
+    
+  }
 }
 // === / FAQ ===
 
