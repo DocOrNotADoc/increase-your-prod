@@ -85,6 +85,9 @@ body {
   cursor: pointer;
   &-group {
     display: inline-flex;
+    &__get-started {
+      margin-top: $base*14;
+    }
     .btn {
       &:nth-child(1) {
         border-top-right-radius: 0;
@@ -117,12 +120,28 @@ body {
     svg {
       margin-left: 5px;
     }
+    &-inverted {
+      background-color: #fff;
+      color: #565f82;
+      &:hover {
+        background-color: darken(#fff, 4%);
+        color: darken(#565f82, 10%);
+      }
+    }
   }
   &-no-bg {
     color: $color-descr;
     border: 1px solid #d1d1e4;
     &:hover {
       background-color: darken(#d4e2fa, 3%);
+    }
+    &-inverted {
+      border: 1px solid #a0b4ff;
+      color: #c7d3ff;
+      &:hover {
+        background-color: lighten(#6888FF, 3%);
+        color: lighten(#c7d3ff, 10%);
+      }
     }
   }
   &-danger {
@@ -146,13 +165,14 @@ body {
     margin-top: $base*2;
     a {
       color: #7382A3;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
-  a {
-    &:hover {
-      text-decoration: none;
-    }
+  &:hover {
+    text-decoration: none;
   }
 }
 .hide {
@@ -171,7 +191,7 @@ body {
   span {
     font-weight: $fw-medium;
   }
-  &__plan-and-manage {
+  &__big {
     font-size: $fz-ttl-md;
     margin-top: $base * 7;
   }
@@ -228,6 +248,9 @@ body {
   font-weight: $fw-medium;
   line-height: 1.9;
   color: $color-descr;
+}
+.white-text {
+  color: #fff;
 }
 // === / COMMON ===
 
@@ -710,13 +733,6 @@ body {
 // === / QUOTES ===
 
 
-// === GET-STARTED ===
-.section-get-started {
-  background-color: #6888ff;
-}
-// === / GET-STARTED ===
-
-
 // === FAQ ===
 .section-faq {
   .section-inner {
@@ -795,6 +811,40 @@ body {
 }
 // === / FAQ ===
 
+
+
+// === GET-STARTED ===
+.section-get-started {
+  position: relative;
+  background: linear-gradient(#6888ff, #5e80ff);
+  text-align: center;
+  .section-inner {
+    position: relative;
+    padding: $base*13 0;
+    z-index: 10;
+  }
+  &::before{
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(../img/bg/get-started__clouds.svg) no-repeat 50% 50%;
+    content: '';
+  }
+}
+.get-started {
+  &__text {
+    margin: 28px auto 0 auto;
+    max-width: 60%;
+    // max-width: $base*170;
+    font-size: 15px;
+    font-weight: $fw-regular;
+    line-height: 2;
+  }
+}
+// === / GET-STARTED ===
 
 // === NEWSLATTER ===
 .section-newslatter {
