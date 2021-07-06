@@ -67,6 +67,22 @@ body {
     max-width: 1200px;
   }
 }
+.input {
+  @include quicksand;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: #efeff7;
+  font-weight: $fw-bold;
+  color: $color-ttl;
+  &::placeholder {
+    color: #7a85ad;
+  }
+  &-lg{
+    width: $base*70;
+    height: $base*15;
+    padding-left: $base*6;
+  }
+}
 .btn {
   @include quicksand;
 
@@ -76,7 +92,7 @@ body {
   border: 1px solid transparent;
   border-radius: 2px;
   background: none;
-  font-size: $fz-sm;
+  font-size: 13px;
   font-weight: $fw-bold;
   text-align: center;
   text-decoration: none;
@@ -114,7 +130,7 @@ body {
     background-color: #4c85ff;
     path {fill: #fff}
     &:hover {
-      background-color: lighten(#4c85ff, 25%);
+      background-color: lighten(#4c85ff, 7%);
       path {fill: #0045b3}
     }
     svg {
@@ -128,6 +144,14 @@ body {
         color: darken(#565f82, 10%);
       }
     }
+    &-lg {
+      margin-left: $base*3;
+      // padding: $base*5 $base*15;
+      border-radius: 5px;
+      width: $base*46;
+      height: $base*15;
+      font-size: 13px;
+    }
   }
   &-no-bg {
     color: $color-descr;
@@ -139,7 +163,7 @@ body {
       border: 1px solid #a0b4ff;
       color: #c7d3ff;
       &:hover {
-        background-color: lighten(#6888FF, 3%);
+        background-color: lighten(#6888FF, 2%);
         color: lighten(#c7d3ff, 10%);
       }
     }
@@ -849,6 +873,27 @@ body {
 // === NEWSLATTER ===
 .section-newslatter {
   background-color: #fcfdff;
+  .section-inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__left {
+    flex-basis: 35%;
+    &-ttl {
+      @include quicksand;
+      font-size: 18px;
+      color: $color-ttl;
+      font-weight: $fw-bold;
+    }
+    .text {
+      margin-top: $base*4;
+      max-width: 330px;
+    }
+  }
+  &__right {
+    flex-basis: 55%;
+    margin-top: 18px;
+  }
 }
 // === / NEWSLATTER ===
 
