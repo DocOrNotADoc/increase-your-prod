@@ -144,7 +144,7 @@ body {
         color: darken(#565f82, 10%);
       }
     }
-    &-lg {
+    &-newslatter {
       margin-left: $base*3;
       // padding: $base*5 $base*15;
       border-radius: 5px;
@@ -268,7 +268,7 @@ body {
   }
 }
 .text {
-  font-size: 15px;
+  font-size: $fz-md;
   font-weight: $fw-medium;
   line-height: 1.9;
   color: $color-descr;
@@ -375,7 +375,7 @@ body {
       text-align: center;
       .text {
         width: $base * 117;
-        margin: 28px auto 0 auto;
+        margin: $base*7 auto 0 auto;
       }
     }
   }
@@ -389,7 +389,8 @@ body {
   height: $base * 13;
   border-radius: 100%;
   background-color: #fff;
-  box-shadow: 0 10px 50px rgba(#C9D1E7, .6);
+  // box-shadow: 0 10px 50px rgba(#C9D1E7, .6);
+  box-shadow: 0 $base*2 $base*12 rgba(#C9D1E7, .6);
   &::before {
     display: block;
     margin-left: 15px;
@@ -397,7 +398,7 @@ body {
     height: 0;
     content: '';
     border-color: transparent;
-    border-width: 7px 12px;
+    border-width: 7px $base*3;
     border-style: solid;
     border-left-color: $color-primary;
 
@@ -482,7 +483,7 @@ body {
       position: absolute;
       top: 71%;
       right: 123%;
-      width: 28px;
+      width: $base*7;
       height: 1px;
       background-color: #dae4fe;
       content: '';
@@ -590,7 +591,7 @@ body {
     @include list-null;
     background-color: #fff;
     border: 1px solid d8e3fe;
-    box-shadow: 0 15px 50px #eff4ff;
+    box-shadow: 0 $base*4 $base*25 #eff4ff;
     &__arrow {
       position: absolute;
       top: 50%;
@@ -617,15 +618,15 @@ body {
       }
       &-gallery {
         display: grid;
-        grid-template-rows: repeat(2, 128px);
-        grid-template-columns: repeat(3, 128px); 
+        grid-template-rows: repeat(2, $base*32);
+        grid-template-columns: repeat(3, $base*32); 
         grid-gap: 13px;
         margin-left: 1%;
         .image-link {
           position: relative;
           border-radius: 5px;
           overflow: hidden;
-          box-shadow: 0 15px 100px #e5ebf8;
+          box-shadow: 0 15px $base*25 #e5ebf8;
           .zoom {
             position: absolute;
             top: 50%;
@@ -706,14 +707,6 @@ body {
   &__left, &__right {
     flex-basis: 45%;
   }
-  &__left {
-
-  }
-  &__right {
-    
-  }
-
-
   .text {
     margin-top: 14px;
     width: $base*80;
@@ -728,8 +721,8 @@ body {
 
   &__item {
     position: relative;
-    width: 423px;
-    height: 175px;
+    width: $base*106;
+    height: $base*44;
     padding: $base*10 $base*17 $base*15 $base*17;
     background-color: #fff;
     border: 1px solid $color-divider;
@@ -760,7 +753,6 @@ body {
 // === FAQ ===
 .section-faq {
   .section-inner {
-    // width: 743px;
     width: $base*186;
     margin: 0 auto;
   }
@@ -776,7 +768,6 @@ body {
 
     &--active {
       #{$parent}-trigger {
-        // stroke: #495274;
         &-icon {
           transform: rotate(0deg);
           .arrow {
@@ -785,7 +776,7 @@ body {
         }
         &-text {
           color: #495274;
-          font-size: 15px;
+          font-size: $fz-md;
           font-weight: $fw-bold;
         }
       }
@@ -799,7 +790,6 @@ body {
       display: flex;
       padding: $base*4;
       cursor: pointer;
-      // stroke: $color-descr;
       &-icon {
         margin: 0 $base*6 0 $base*4;
         transform: rotate(180deg);
@@ -809,7 +799,7 @@ body {
       }
       &-text {
         color: $color-descr;
-        font-size: 15px;
+        font-size: $fz-md;
         font-weight: $fw-medium;
       }
     }
@@ -824,9 +814,6 @@ body {
         line-height: 1.9;
         color: $color-descr;
       }
-      // &-btn-wrapper {
-      //   width: $base*49;
-      // }
     }
 
 
@@ -860,10 +847,9 @@ body {
 }
 .get-started {
   &__text {
-    margin: 28px auto 0 auto;
+    margin: $base*7 auto 0 auto;
     max-width: 60%;
-    // max-width: $base*170;
-    font-size: 15px;
+    font-size: $fz-md;
     font-weight: $fw-regular;
     line-height: 2;
   }
@@ -887,13 +873,17 @@ body {
     }
     .text {
       margin-top: $base*4;
-      max-width: 330px;
+      max-width: $base*82;
     }
   }
   &__right {
     flex-basis: 55%;
     margin-top: 18px;
   }
+}
+.form-newslatter {
+  display: flex;
+
 }
 // === / NEWSLATTER ===
 
