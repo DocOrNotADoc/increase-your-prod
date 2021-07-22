@@ -277,6 +277,16 @@ body {
 .white-text {
   color: $color-white;
 }
+.visually-hidden {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
 // === / COMMON ===
 
 
@@ -291,10 +301,14 @@ body {
   align-items: center;
 }
 .logo {
-  width: $base * 6;
-  height: $base * 6;
-  background-color: $color-primary;
-  border-radius: 100%;
+  margin: 0;
+  &__link {
+    display: block;
+    width: $base * 6;
+    height: $base * 6;
+    background-color: $color-primary;
+    border-radius: 100%;
+  }
 }
 .nav {
   margin-left: $base * 18;
@@ -354,7 +368,6 @@ body {
 
 // === HERO-IMAGE ===
 .section-hero-image {
-  background-color: #f4f7ff;
   position: relative;
   .dots {
     position: absolute;
@@ -367,7 +380,7 @@ body {
     padding: 0;
     list-style: none;
     &__item {
-      background: url(../img/bg/hero-image.png);
+      background: url(../img/bg/hero-image.png) center center/cover no-repeat;
       padding-top: $base * 23;
       height: $base * 140;
       background-position: 50% 50%;
