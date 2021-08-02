@@ -148,6 +148,10 @@ body {
       width: $base*46;
       height: $base*15;
       font-size: 13px;
+      &:hover {
+        background-color: lighten($color-primary, 15%);
+        color: darken(#565f82, 10%);
+      }
     }
   }
   &-no-bg {
@@ -300,15 +304,21 @@ body {
   display: flex;
   align-items: center;
 }
+// .logo {
+//   margin: 0;
+//   &__link {
+//     display: block;
+//     width: $base * 6;
+//     height: $base * 6;
+//     background-color: $color-primary;
+//     border-radius: 100%;
+//   }
+// }
 .logo {
-  margin: 0;
-  &__link {
-    display: block;
-    width: $base * 6;
-    height: $base * 6;
-    background-color: $color-primary;
-    border-radius: 100%;
-  }
+  width: $base * 6;
+  height: $base * 6;
+  background-color: $color-primary;
+  border-radius: 100%;
 }
 .nav {
   margin-left: $base * 18;
