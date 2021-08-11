@@ -1,0 +1,46 @@
+.ttl {
+  @include quicksand;
+  margin: 0;
+  padding: 0;
+  color: $color-ttl;
+  font-weight: $fw-light;
+  &__hero-image {
+    font-size: $fz-ttl-l;
+    margin-top: $base * 4;
+  }
+  span {
+    font-weight: $fw-medium;
+  }
+  &__big {
+    font-size: $fz-ttl-md;
+    margin-top: $base * 7;
+  }
+  &__sm {
+    margin-top: $base * 5;
+    text-align: center;
+    font-size: $fz-ttl-sm;
+    font-weight: $fw-medium;
+  }
+  &__blog {
+    margin-top: -11px;
+    font-size: $fz-ttl-md;
+    font-weight: $fw-regular;
+  }
+}
+.subttl {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-ttl;
+  font-weight: $fw-medium;
+  &__plan-and-manage {
+    margin-top: $base * 22;
+    text-align-last: left;
+  }
+  &__customers {
+    margin-top: $base*8;
+    text-align-last: left;
+  }
+}
