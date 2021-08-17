@@ -1,8 +1,8 @@
 @import "./libs/normalise";
-@import "./libs/bootstrap-reboot.min";
-@import "./libs/bootstrap-grid.min";
+// @import "./libs/bootstrap-reboot.min";
+// @import "./libs/bootstrap-grid.min";
 
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/cs`s2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap");
 
 // === MIXIN === 
 @mixin roboto {
@@ -98,40 +98,35 @@ body {
 }
 
 .vertical-indent {
+  @mixin vertical-indent ($size) {
+    padding-top: $size;
+    padding-bottom: $size;
+  }
   &-s {
-    padding-top: $base*5;
-    padding-bottom: $base*5;
-  }
-  &-m {
-    padding-top: $base*12;
-    padding-bottom: $base*12;
-  }
-  &-l {
-    padding-top: $base*30;
-    padding-bottom: $base*30;
-  }
-  &-xl {
-    padding-top: $base*43;
-    padding-bottom: $base*43;
-  }
-  &-hero {
-    padding-top: $base * 23;
-  }
-  @media (max-width: $breakpoint-lg-max) {
-    &-xl {
-      padding-top: $base*29;
-      padding-bottom: $base*29;
+    @include vertical-indent($base*5);
+    .section-header & {
+      @media (max-width: $breakpoint-sm-max) {
+        @include vertical-indent($base*2);
+      }
     }
+  }
+  &-m {@include vertical-indent($base*12)}
+  &-l {@include vertical-indent($base*30)}
+  &-xl {@include vertical-indent($base*43)}
+  &-hero {padding-top: $base*23}
+
+  @media (max-width: $breakpoint-lg-max) {
+    &-xl {@include vertical-indent($base*29)}
   }
   @media (max-width: $breakpoint-md-max) {
-    &-m {
-      padding-top: $base*10;
-      padding-bottom: $base*10;
-    }
-    &-l {
-      padding-top: $base*19;
-      padding-bottom: $base*19;
-    }
+    &-m {@include vertical-indent($base*13)}
+    &-l {@include vertical-indent($base*19)}
+  }
+  @media (max-width: $breakpoint-sm-max) {
+    &-m {@include vertical-indent($base*8)}
+    &-l {@include vertical-indent($base*16)}
+    &-xl {@include vertical-indent($base*19)}
+    &-hero {padding-top: $base*19}
   }
 }
 .input {
@@ -272,11 +267,6 @@ body {
       }
     }
   }
-
-  &:hover {
-    text-decoration: none;
-  }
-
   &__burger {
     display: none;
     border: none;
@@ -292,9 +282,25 @@ body {
         margin-top: $base;
       }
     }
-    
-    @media (max-width: $breakpoint-md-max) {
+  }
+  
+  &:hover {
+    text-decoration: none;
+  }
+  @media (max-width: $breakpoint-md-max) {
+    &__burger {
       display: block;
+    }
+  }
+  @media (max-width: $breakpoint-xs-max) {
+    &-secondary {
+      &-newslatter {
+        margin-left: 0;
+        margin-top: $base*7;
+      }
+    }
+    &-faq {
+      margin-top: $base*4;
     }
   }
 }
@@ -329,7 +335,20 @@ body {
   &__blog {
     margin-top: -11px;
     font-size: $fz-ttl-md;
+    line-height: $fz-ttl-md*1.2;
     font-weight: $fw-regular;
+  }
+  @media (max-width: $breakpoint-xs-max) {
+    &__big {
+      margin-top: $base*3;
+      line-height: $fz-ttl-md*1.1;
+    }
+    &__sm {
+      margin-top: $base * 3;
+    }
+    &__blog {
+      margin-top: -$base;
+    }
   }
 }
 .subttl {
@@ -347,6 +366,14 @@ body {
   &__customers {
     margin-top: $base*8;
     text-align-last: left;
+  }
+  @media (max-width: $breakpoint-xs-max) {
+    &__plan-and-manage {
+      margin-top: $base*13;
+    }
+    &__customers {
+      margin-top: $base*2;
+    }
   }
 }
 .dots {
@@ -376,6 +403,7 @@ body {
   &-sm {
     font-size: $fz-sm;
   }
+
 }
 .white-text {
   color: $color-white;
@@ -479,6 +507,13 @@ body {
         }
       }
     }
+    .section-footer & {
+      @media (max-width: $breakpoint-xs-max) {
+        &__item {
+          margin: $base*2;
+        }
+      }
+    }
   }
 }
 .socials {
@@ -541,8 +576,11 @@ body {
       background-repeat: no-repeat;
       text-align: center;
       .text {
-        width: $base * 117;
+        max-width: $base * 117;
         margin: $base*7 auto 0 auto;
+        @media (max-width: $breakpoint-sm-max) {
+          padding: 0 $base*3;
+        }
       }
     }
   }
@@ -570,6 +608,9 @@ body {
     border-left-color: $color-primary;
 
   }
+  @media (max-width: $breakpoint-sm-max) {
+    margin-top: $base*11;
+  }
 }
 // === / HERO-IMAGE ===
 
@@ -587,7 +628,13 @@ body {
         opacity: 1;
       }
     }
-    
+    @media (max-width: $breakpoint-sm-max) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      a {
+        padding: $base*4;
+      }
+    }
   }
 }
 // === / CUSTOMERS ===
@@ -634,6 +681,21 @@ body {
       }
     }
   }
+  @media (max-width: $breakpoint-sm-max) {
+    &__content {
+      width: 68%;
+      .aside-image {
+        left: 67%;
+      }
+    }
+  }
+  @media (max-width: $breakpoint-xs-max) {
+    &__content {
+      .aside-image {
+        left: 47%;
+      }
+    }
+  }
 }
 // === / PLAN-AND-MANAGE ===
 
@@ -655,6 +717,7 @@ body {
   @include list-null;
   display: flex;
   justify-content: space-around;
+  margin-top: $base*19;
   text-align: center;
   
   &__item {
@@ -676,7 +739,7 @@ body {
       align-items: center;
       width: $base*17;
       height: $base*17;
-      margin: $base*19 auto 0 auto;
+      margin: 0 auto;
       border-radius: 100%;
       background-color: $bg-color;
     }
@@ -691,6 +754,26 @@ body {
       color: $color-descr;
       font-size: $fz-sm;
     }
+  }
+  @media (max-width: $breakpoint-sm-max) {
+    margin-top: $base*16;
+  }
+  @media (max-width: $breakpoint-xs-max) {
+    margin-top: $base*4;
+    &__item {
+      flex-basis: 43%;
+      margin-top: $base*10;
+      &-ttl {
+        margin-top: $base*5;
+      }
+      &-text {
+        margin-top: $base*3;
+      }
+      &::before {
+        display: none;
+      }
+    }
+    flex-wrap: wrap;
   }
 }
 .or-block {
@@ -727,13 +810,6 @@ body {
     flex-direction: column;
     flex-basis: 50%;
     padding: $base*16 $base*22;
-    @media (max-width: $breakpoint-xl-max) {
-      padding: $base*16 $base*18 $base*12 $base*18;
-    }
-    @media (max-width: $breakpoint-md-max) {
-      padding: $base*14 $base*15 $base*11 $base*15;
-    }
-
   }
   &__left {
     background: linear-gradient(#6888FF, $color-primary);
@@ -756,12 +832,35 @@ body {
     margin-top: $base*6;
     font-size: $fz-xl;
     font-weight: $fw-medium;
-    @media (max-width: $breakpoint-xl-max) {
+  }
+  @media (max-width: $breakpoint-xl-max) {
+    &__left, &__right {
+      padding: $base*16 $base*18 $base*12 $base*18;
+    }
+    &__text {
       width: 73%;
     }
-    @media (max-width: $breakpoint-md-max) {
+  }
+  @media (max-width: $breakpoint-md-max) {
+    &__left, &__right {
+      padding: $base*14 $base*15 $base*11 $base*15;
+    }
+    &__text {
       width: 90%;
       margin-top: $base*4;
+    }
+  }
+  @media (max-width: $breakpoint-sm-max) {
+    &__text {
+      width: 94%;
+    }
+  }
+  @media (max-width: $breakpoint-xs-max) {
+    &__left, &__right {
+      padding: $base*7;
+    }
+    &__text {
+      width: 100%;
     }
   }
 }
@@ -781,8 +880,15 @@ body {
     }
   }
   @media (max-width: $breakpoint-md-max) {
+    padding: $base*17 0;
     .dots {
       margin-top: $base*13;
+    }
+  }
+  @media (max-width: $breakpoint-sm-max) {
+    padding: $base*17 0;
+    .dots {
+      margin-top: $base*8;
     }
   }
 }
@@ -812,17 +918,11 @@ body {
         right: 100%;
         transform: translateY(-50%);
         margin-right: $base*14;
-        @media (max-width: $breakpoint-xl-max) {
-          display: none;
-        }
       }
       &__next {
         left: 100%;
         transform: translateY(-50%) rotate(180deg);
         margin-left: $base*14;
-        @media (max-width: $breakpoint-xl-max) {
-        display: none;
-        }
       }
       @media (max-width: $breakpoint-md-max) {
         display: none;
@@ -837,15 +937,10 @@ body {
         display: grid;
         grid-template-rows: repeat(2, $base*32);
         grid-template-columns: repeat(3, $base*32);
+        // grid-template-rows: repeat(2, 1fr);
+        // grid-template-columns: repeat(3, 1fr);
         grid-gap: $fz-md;
         margin-left: 1%;
-
-        @media (max-width: $breakpoint-md-max) {
-          display: grid;
-          grid-template-rows: repeat(2, $base*25);
-          grid-template-columns: repeat(3, $base*25);
-          grid-gap: $fz-subttl;
-        }
 
         .image-link {
           position: relative;
@@ -869,6 +964,7 @@ body {
           img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
           }
           &::before {
             position: absolute;
@@ -917,6 +1013,107 @@ body {
       }
     }
   }
+  @media (max-width: $breakpoint-xl-max) {
+    &-blog {
+      &__arrow {
+        &__prev, &__next {
+          display: none;
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-md-max) {
+    &-wrapper {
+      margin-top: $base*15;
+    }
+    &-blog {
+      max-width: 90%;
+      &__item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: $base*10 $base*8;
+        &-gallery {
+          max-width: 55%;
+          grid-template-rows: repeat(1,  1fr);
+          grid-template-columns: repeat(3,  1fr);
+          grid-gap: $fz-subttl;
+          .image-link {
+            &--b {
+              grid-row: 1 / 2;
+              grid-column: 1 / 2;
+            }
+            &--s1 {
+              grid-row: 1 / 2;
+              grid-column: 2 / 3;
+            }
+            &--s2 {
+              grid-row: 1 / 2;
+              grid-column: 3 / 4;
+            }
+          }
+        }
+        &-content {
+          position: relative;
+          z-index: 5;
+          margin: $base*6 0 0 0;
+          .text {
+            margin-top: $base*5;
+          }
+        }
+        .btns {
+          margin-top: $base*7;
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-sm-max) {
+    &-wrapper {
+      margin-top: $base*10;
+    }
+    &-blog {
+      max-width: 80%;
+      &__item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: $base*6 $base*5;
+        .btns {
+          margin-top: $base*10;
+        }
+        &-gallery {
+          max-width: 65%;
+          margin-left: $base*2;
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-xs-max) {
+    &-blog {
+      max-width: 90%;
+      &__item {
+        align-items: center;
+        &-gallery {
+          max-width: 100%;
+          grid-template-rows: repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
+          margin-left: 0;
+          .image-link {
+            &--b {
+              grid-row: 1 / 3;
+              grid-column: 1 / 3;
+            }
+            &--s1 {
+              grid-row: 1 / 2;
+              grid-column: 3 / 4;
+            }
+            &--s2 {
+              grid-row: 2 / 3;
+              grid-column: 3 / 4;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 // === / BLOG ===
 
@@ -944,6 +1141,19 @@ body {
     flex-basis: 47%;
     }
   }
+  @media (max-width: $breakpoint-sm-max) {
+    .dots {
+      margin-top: $base*17;
+    }
+  }
+  @media (max-width: $breakpoint-xs-max) {
+    .section-inner {
+      flex-direction: column;
+    }
+    .dots {
+      margin-top: $base*15;
+    }
+  }
 }
 
 .slider-quotes {
@@ -964,7 +1174,6 @@ body {
     }
     &-photo {
       // $height: $base*16;
-
       position: absolute;
       top: 100%;
       left: 50%;
@@ -981,6 +1190,14 @@ body {
         max-width: 100%;
       }
     }
+  } 
+  @media (max-width: $breakpoint-md-max) {
+    &__item {
+      padding: $base*7 $base*9 $base*10 $base*9;
+    }
+  }
+  @media (max-width: $breakpoint-xs-max) {
+    margin-top: $base*8;
   }
 }
 // === / QUOTES ===
@@ -989,7 +1206,7 @@ body {
 // === FAQ ===
 .section-faq {
   .section-inner {
-    width: $base*186;
+    max-width: $base*186;
     margin: 0 auto;
   }
 }
@@ -1043,17 +1260,24 @@ body {
       display: none;
       padding: 0 $base*4 $base*11 0;
       &-text {
-        width: $base*99;
+        max-width: $base*99;
         margin: 0 $base*15 0 $base*23;
         font-size: $fz-md-to-l;
         font-weight: $fw-regular;
         line-height: 1.9;
         color: $color-descr;
       }
+
+      @media (max-width: $breakpoint-xs-max) {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0 $base*7 0;
+        &-text {
+          margin: 0 $base*2 0 $base*7;
+          max-width: 93%;
+        }
+      }
     }
-
-
-    
   }
 }
 // === / FAQ ===
@@ -1088,6 +1312,9 @@ body {
     font-size: $fz-l;
     font-weight: $fw-regular;
     line-height: 2;
+    @media (max-width: $breakpoint-xs-max) {
+      max-width: 90%;
+    }
   }
 }
 // === / GET-STARTED ===
@@ -1129,7 +1356,11 @@ body {
 }
 .form-newslatter {
   display: flex;
+  @media (max-width: $breakpoint-xs-max) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 // === / NEWSLATTER ===
 
-// 1.03
+// 2:03
