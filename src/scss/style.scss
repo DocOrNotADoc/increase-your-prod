@@ -141,7 +141,7 @@ body {
   }
   &-lg{
     width: $base*70;
-    height: $base*15;
+    height: $base*14;
     padding-left: $base*6;
   }
 }
@@ -150,7 +150,7 @@ body {
 
   margin: 0;
   padding: $base*3 $base*4;
-  height: $base*11;
+  height: fit-content;
   border: 1px solid transparent;
   border-radius: $base/2;
   background: none;
@@ -422,15 +422,6 @@ body {
 
 
 // === HEADER & FOOTER ===
-.section-header {
-  position: relative;
-}
-.section-footer {
-  border-bottom: 0;
-  @media (max-width: $breakpoint-md-max) {
-    margin-top: $base*4;
-  }
-}
 .main-navigation {
   display: flex;
   align-items: center;
@@ -474,6 +465,37 @@ body {
     }
   }
 }
+.section-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 8;
+  background-color: rgba($color-white, .9);
+
+  @media (max-width: $breakpoint-md-max) {
+    &_active {
+        &::before {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          content: '';
+          background-color: rgba(0, 0, 0, .3)
+        }
+      .main-navigation__wrapper {
+        display: flex;
+      }
+    }
+  }
+}
+.section-footer {
+  border-bottom: 0;
+  @media (max-width: $breakpoint-md-max) {
+    margin-top: $base*4;
+  }
+}
 .logo {
   width: $base * 6;
   height: $base * 6;
@@ -507,7 +529,7 @@ body {
         }
       }
     }
-    .section-footer & {
+    .section-footer &, .section-header &, {
       @media (max-width: $breakpoint-xs-max) {
         &__item {
           margin: $base*2;
@@ -557,6 +579,7 @@ body {
 // === HERO-IMAGE ===
 .section-hero-image {
   position: relative;
+  margin-top: 65px;
   padding: 0;
   .dots {
     position: absolute;
@@ -578,7 +601,14 @@ body {
       .text {
         max-width: $base * 117;
         margin: $base*7 auto 0 auto;
-        @media (max-width: $breakpoint-sm-max) {
+      }
+    }
+  }
+  @media (max-width: $breakpoint-sm-max) {
+    margin-top: 41px;
+    .slider-hero-image {
+      &__item {
+        .text {
           padding: 0 $base*3;
         }
       }
@@ -1243,6 +1273,7 @@ body {
       display: flex;
       padding: $base*4;
       cursor: pointer;
+      align-items: center;
       &-icon {
         margin: 0 $base*6 0 $base*4;
         transform: rotate(180deg);
@@ -1356,9 +1387,11 @@ body {
 }
 .form-newslatter {
   display: flex;
+  margin-top: $base*2;
   @media (max-width: $breakpoint-xs-max) {
     flex-direction: column;
     align-items: center;
+    margin-top: 0;
   }
 }
 // === / NEWSLATTER ===
