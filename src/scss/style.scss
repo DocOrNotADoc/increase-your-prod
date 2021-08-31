@@ -272,14 +272,27 @@ body {
     border: none;
     background-color: transparent;
     margin-left: auto;
-    &-line {
+    span {
       display: block;
       width: $base*4;
       height: $base/2;
       // height: 2px;
       background-color: $color-descr;
-      &+& {
-        margin-top: $base;
+      transition: $transition;
+      &:nth-child(2) {margin: $base 0;}
+    }
+    &_active {
+      span {
+        margin-bottom: -2px;
+        &:nth-child(1) {
+          width: $base*5;
+          transform: translateY(3px) rotate(-45deg);
+        }
+        &:nth-child(2) {display: none}
+        &:nth-child(3) {
+          width: $base*5;
+          transform: translateY(3px) rotate(45deg);
+        }   
       }
     }
   }

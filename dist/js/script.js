@@ -7,7 +7,9 @@ document.querySelector('.faq-accordeon').addEventListener('click', (event) => {
 
 
 // BURGER & SCROLL-BLOCK & CLOSE MENU TO CLICK ANY ITEM OR BURGER FILL//
-document.querySelector('.btn__burger').addEventListener('click', (event) => {
+const burger = document.querySelector('.btn__burger');
+
+burger.addEventListener('click', (event) => {
 
   const header = document.querySelector('.section-header'),
   mainNavigation = document.getElementById('main-navigation'),
@@ -19,6 +21,8 @@ document.querySelector('.btn__burger').addEventListener('click', (event) => {
 
   // SHOW & HIDE NAVIGATION 2 CLICK BURGER //
   header.classList.toggle('section-header_active');
+  burger.classList.toggle('btn__burger_active');
+
 
   // TOGGLE SCROLL //
   const getScrollbarWidth = () => {
@@ -60,6 +64,7 @@ document.querySelector('.btn__burger').addEventListener('click', (event) => {
 // ESCAPE SCROLL-TOGGLING, IF USER START TO RESIZE WINDOW //
   const resetScrollToggle = () => {
     header.classList.remove('section-header_active');
+    burger.classList.remove('btn__burger_active');
     showScroll();
   };
 
