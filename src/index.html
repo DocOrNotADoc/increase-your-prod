@@ -17,14 +17,12 @@
 
                     <h1 class="visually-hidden">Increase your productivity</h1>
 
-                    <a class="logo" href="#" id="logo" aria-label="Logo">
-                        <span class="visually-hidden"></span>
-                    </a>
+                    <a class="logo" href="#" id="logo" aria-label="Logo"></a>
 
                     <button class="btn__burger" aria-label="Toggle navigation">
-                        <span class="btn__burger-line"></span>
-                        <span class="btn__burger-line"></span>
-                        <span class="btn__burger-line"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
 
                 <div class="main-navigation__wrapper">
@@ -103,9 +101,10 @@
     <main>
     
         <!-- hero-image -->
-        <section class="section-outer section-hero-image">
-            <ul class="slider-hero-image">
-                <li class="slider-hero-image__item vertical-indent-hero">
+        <section class="section-outer section-hero-image swiper">
+            <ul class="slider-hero-image swiper-wrapper">
+
+                <li class="slider-hero-image__item vertical-indent-hero swiper-slide">
                     <h2 class="subttl">PLAN YOUR LIFE</h2>
                     <div class="ttl ttl__big">Increase your <span>productivity</span></div>
                     <div class="text">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro. Usu atqui laudem an, insolens gubergren similique est cu. Et vel modus congue vituperata.</div>
@@ -115,19 +114,32 @@
                         </a>
                     </div>
                 </li>
-                <!-- <li class="slider-hero-image__item hide"></li>
-                <li class="slider-hero-image__item hide"></li> -->
+
+                <li class="slider-hero-image__item vertical-indent-hero swiper-slide">
+                    <h2 class="subttl">PLAN YOUR LIFE</h2>
+                    <div class="ttl ttl__big">Increase your <span>productivity</span></div>
+                    <div class="text">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro. Usu atqui laudem an, insolens gubergren similique est cu. Et vel modus congue vituperata.</div>
+                    <div class="btn-icon-play-wrapper">
+                        <a href="#" aria-label="Play">
+                            <span class="icon-play"></span>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="slider-hero-image__item vertical-indent-hero swiper-slide">
+                    <h2 class="subttl">PLAN YOUR LIFE</h2>
+                    <div class="ttl ttl__big">Increase your <span>productivity</span></div>
+                    <div class="text">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro. Usu atqui laudem an, insolens gubergren similique est cu. Et vel modus congue vituperata.</div>
+                    <div class="btn-icon-play-wrapper">
+                        <a href="#" aria-label="Play">
+                            <span class="icon-play"></span>
+                        </a>
+                    </div>
+                </li>
+                
             </ul>
 
-            <ul class="dots">
-                <li class="dots__item dots__item--active"></li>
-                <li class="dots__item"></li>
-                <li class="dots__item"></li>
-            </ul>
-
-            <!-- <div class="section-inner">
-                hero-image
-            </div> -->
+            <div class="swiper-pagination"></div>
         </section>
         <!-- / hero-image -->
 
@@ -231,26 +243,29 @@
 
         <!-- blog -->
         <section class="section-outer section-blog">
-                <h2 class="subttl">OUR RESOURCES</h2>
-                <div class="ttl ttl__sm">Start reading our blog</div>
+            <h2 class="subttl">OUR RESOURCES</h2>
+            <div class="ttl ttl__sm">Start reading our blog</div>
 
-                <div class="slider-wrapper">
-                    <ul class="slider-blog">
-                        <li class="slider-blog__item">
+            <div class="swiper slider-blog-wrapper">
+                <div class="slider-blog">
 
-                            <div class="slider-blog__item-gallery">
-                                <a href="#" class="image-link image-link--b" aria-label="Blog-image 1">
+                    <ul class="swiper-wrapper slider-blog-container">
+
+                        <li class="swiper-slide slider-blog-container__item">
+
+                            <div class="slider-blog-container__item-gallery">
+                                <a data-fslightbox='slide-1' href="./img/blog-b.png" class="image-link image-link--b" aria-label="Blog-image 1">
                                     <img src="./img/blog-b.png" alt="image">
                                 </a>
-                                <a href="#" class="image-link image-link--s1" aria-label="Blog-image 2">
+                                <a data-fslightbox='slide-1' href="./img/blog-s1.png" class="image-link image-link--s1" aria-label="Blog-image 2">
                                     <img src="./img/blog-s1.png" alt="image">
                                 </a>
-                                <a href="#" class="image-link image-link--s2" aria-label="Blog-image 3">
+                                <a data-fslightbox='slide-1' href="./img/blog-s2.png" class="image-link image-link--s2" aria-label="Blog-image 3">
                                     <img src="./img/blog-s2.png" alt="image">
                                 </a>
                             </div>
 
-                            <div class="slider-blog__item-content">
+                            <div class="slider-blog-container__item-content">
                                 <h3 class="ttl ttl__blog">How to start planning</h3>
                                 <div class="text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti. Natum petentium principes mei ea. Tota everti periculis vis ei, quas tibique pro at, eos ut decore ...</div>
                                 <div class="btns">
@@ -260,66 +275,174 @@
                             </div>
 
                         </li>
+
+                        <li class="swiper-slide slider-blog-container__item">
+
+                            <div class="slider-blog-container__item-gallery">
+                                <a data-fslightbox='slide-2' href="./img/blog-b.png" class="image-link image-link--b" aria-label="Blog-image 1">
+                                    <img src="./img/blog-b.png" alt="image">
+                                </a>
+                                <a data-fslightbox='slide-2' href="./img/blog-s1.png" class="image-link image-link--s1" aria-label="Blog-image 2">
+                                    <img src="./img/blog-s1.png" alt="image">
+                                </a>
+                                <a data-fslightbox='slide-2' href="./img/blog-s2.png" class="image-link image-link--s2" aria-label="Blog-image 3">
+                                    <img src="./img/blog-s2.png" alt="image">
+                                </a>
+                            </div>
+
+                            <div class="slider-blog-container__item-content">
+                                <h3 class="ttl ttl__blog">How to start planning</h3>
+                                <div class="text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti. Natum petentium principes mei ea. Tota everti periculis vis ei, quas tibique pro at, eos ut decore ...</div>
+                                <div class="btns">
+                                    <a href="#" class="btn btn-primary">Read now</a>
+                                    <a href="#" class="btn btn-hided">Add to your bookmarks</a>
+                                </div>
+                            </div>
+
+                        </li> 
+
+                        <li class="swiper-slide slider-blog-container__item">
+
+                            <div class="slider-blog-container__item-gallery">
+                                <a data-fslightbox='slide-3' href="./img/blog-b.png" class="image-link image-link--b" aria-label="Blog-image 1">
+                                    <img src="./img/blog-b.png" alt="image">
+                                </a>
+                                <a data-fslightbox='slide-3' href="./img/blog-s1.png" class="image-link image-link--s1" aria-label="Blog-image 2">
+                                    <img src="./img/blog-s1.png" alt="image">
+                                </a>
+                                <a data-fslightbox='slide-3' href="./img/blog-s2.png" class="image-link image-link--s2" aria-label="Blog-image 3">
+                                    <img src="./img/blog-s2.png" alt="image">
+                                </a>
+                            </div>
+
+                            <div class="slider-blog-container__item-content">
+                                <h3 class="ttl ttl__blog">How to start planning</h3>
+                                <div class="text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti. Natum petentium principes mei ea. Tota everti periculis vis ei, quas tibique pro at, eos ut decore ...</div>
+                                <div class="btns">
+                                    <a href="#" class="btn btn-primary">Read now</a>
+                                    <a href="#" class="btn btn-hided">Add to your bookmarks</a>
+                                </div>
+                            </div>
+
+                        </li>
+
                     </ul>
 
-                    <a href="#" class="slider-blog__arrow slider-blog__arrow__prev" aria-label="Previous slide"></a>
-                    <a href="#" class="slider-blog__arrow slider-blog__arrow__next" aria-label="Next slide"></a>
+                    <btn class="slider-blog-container__arrow slider-blog-container__arrow__prev swiper-button-prev" aria-label="Previous slide">
+                        <svg width="27" height="19" viewBox="0 0 27 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 9.5L2 9.5M2 9.5L9.81132 17M2 9.5L9.81132 2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </btn>
+                    <btn class="slider-blog-container__arrow slider-blog-container__arrow__next swiper-button-next" aria-label="Next slide">
+                        <svg width="27" height="19" xmlns="http://www.w3.org/2000/svg">
+                            <g transform="rotate(180 13.5 9.5)">
+                                <path d="M25 9.5L2 9.5M2 9.5L9.81132 17M2 9.5L9.81132 2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                        </svg>
+                    </btn>
+
+                    <div class="swiper-pagination"></div>
 
                 </div>
-
-
-                <ul class="dots">
-                    <li class="dots__item dots__item--active"></li>
-                    <li class="dots__item"></li>
-                    <li class="dots__item"></li>
-                </ul>
-
-            
+            </div>
         </section>
         <!-- / blog -->
 
         <!-- quotes -->
-        <section class="section-outer section-quotes">
-            <div class="section-inner vertical-indent-l">
-
+        <section class="section-outer section-quotes vertical-indent-l">
+            <!-- <div class="section-inner vertical-indent-l"> -->
                 <div class="section-quotes__left">
-                    <h2 class="subttl subttl__customers">TESTIMONIALS</h2>
-                    <div class="ttl ttl__big"><span>Customers's quotes</span></div>
-                    <div class="text text-sm">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro. Usu atqui laudem an.</div>
+                    <div class="section-quotes__left-content">
+                        <h2 class="subttl subttl__customers">TESTIMONIALS</h2>
+                        <div class="ttl ttl__big"><span>Customers's quotes</span></div>
+                        <div class="text text-sm">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro. Usu atqui laudem an.</div>
+                    </div>
                 </div>
 
-                <div class="section-quotes__right">
-                    <ul class="slider-quotes">
-                        <li class="slider-quotes__item">
-                            <div class="slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.</div>
-                            <div class="slider-quotes__item-photo">
-                                <img src="./img/quotes-face3.png" alt="photo">
+                <div class="swiper section-quotes__right">
+
+                    <ul class="swiper-wrapper slider-quotes">
+
+                        <li class="swiper-slide slider-quotes__item-wrapper">
+                            <div class="slider-quotes__item">
+                                <div class="slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.</div>
+                                <div class="slider-quotes__item-photo">
+                                    <img src="./img/quotes-face3.png" alt="photo">
+                                </div>
                             </div>
                         </li>
-                        <!-- <li class="slider-quotes__item">
-                            <div class="slider-quotes__item-text"></div>
-                            <div class="slider-quotes__item-photo"></div>
-                        </li> -->
+                        <li class="swiper-slide slider-quotes__item-wrapper">
+                            <div class="slider-quotes__item">
+                                <div class="slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.</div>
+                                <div class="slider-quotes__item-photo">
+                                    <img src="./img/quotes-face3.png" alt="photo">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide slider-quotes__item-wrapper">
+                            <div class="slider-quotes__item">
+                                <div class="slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.</div>
+                                <div class="slider-quotes__item-photo">
+                                    <img src="./img/quotes-face3.png" alt="photo">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide slider-quotes__item-wrapper">
+                            <div class="slider-quotes__item">
+                                <div class="slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.</div>
+                                <div class="slider-quotes__item-photo">
+                                    <img src="./img/quotes-face3.png" alt="photo">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide slider-quotes__item-wrapper">
+                            <div class="slider-quotes__item">
+                                <div class="slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.</div>
+                                <div class="slider-quotes__item-photo">
+                                    <img src="./img/quotes-face3.png" alt="photo">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide slider-quotes__item-wrapper">
+                            <div class="slider-quotes__item">
+                                <div class="slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.</div>
+                                <div class="slider-quotes__item-photo">
+                                    <img src="./img/quotes-face3.png" alt="photo">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide slider-quotes__item-wrapper">
+                            <div class="slider-quotes__item">
+                                <div class="slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.</div>
+                                <div class="slider-quotes__item-photo">
+                                    <img src="./img/quotes-face3.png" alt="photo">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide slider-quotes__item-wrapper">
+                            <div class="slider-quotes__item">
+                                <div class="slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.</div>
+                                <div class="slider-quotes__item-photo">
+                                    <img src="./img/quotes-face3.png" alt="photo">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide slider-quotes__item-wrapper">
+                            <div class="slider-quotes__item">
+                                <div class="slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.</div>
+                                <div class="slider-quotes__item-photo">
+                                    <img src="./img/quotes-face3.png" alt="photo">
+                                </div>
+                            </div>
+                        </li>
+
+
+
                     </ul>
 
-                    <ul class="dots">
-                        <li class="dots__item"></li>
-                        <li class="dots__item"></li>
-                        <li class="dots__item dots__item--active"></li>
-                        <li class="dots__item"></li>
-                        <li class="dots__item"></li>
-                        <li class="dots__item"></li>
-                        <li class="dots__item"></li>
-                        <li class="dots__item"></li>
-                        <li class="dots__item"></li>
-                    </ul>
+                    <div class="swiper-pagination"></div>
+
                 </div>
-
-            </div>
-
-
-            
-
 
         </section>
         <!-- / quotes -->
@@ -474,9 +597,7 @@
 
                 <h1 class="visually-hidden">Increase your productivity</h1>
 
-                <a class="logo" href="#" aria-label="Logo">
-                    <span class="visually-hidden"></span>
-                </a>
+                <a class="logo" href="#" aria-label="Logo"></a>
 
                 <div class="main-navigation__wrapper">
 
@@ -559,6 +680,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> -->
 
+    <!-- imported to style.scss -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" > -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <script src="./js/fslightbox.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

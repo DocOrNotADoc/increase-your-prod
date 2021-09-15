@@ -84,4 +84,59 @@ burger.addEventListener('click', (event) => {
 
 });
 
-// 19+55
+new Swiper('.section-hero-image', {
+  loop: true,
+  grabCursor: true,
+  effect: "creative",
+  creativeEffect: {
+    prev: {
+      shadow: true,
+      translate: ["-25%", 0, -1],
+    },
+    next: {
+      translate: ["100%", 0, 0],
+    },
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
+new Swiper('.slider-blog', {
+  loop: true,
+  grabCursor: true,
+  effect: "creative",
+  creativeEffect: {
+    prev: {
+      shadow: true,
+      translate: ["-120%", 0, -500],
+    },
+    next: {
+      shadow: true,
+      translate: ["120%", 0, -500],
+    },
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
+new Swiper('.section-quotes__right', {
+  loop: true,
+  grabCursor: true,
+  slidesPerView: 'auto',
+  spaceBetween: 64,
+  initialSlide: 2,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+

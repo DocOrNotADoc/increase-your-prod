@@ -1,0 +1,11 @@
+<svg width="27" height="19" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <g transform="rotate(180 400 300)">
+   <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3" stroke="#A8B4E5" d="m411.5,300l-23,0m0,0l7.81132,7.5m-7.81132,-7.5l7.81132,-7.5"/>
+  </g>
+  <g transform="rotate(180 13.5 9.5)">
+   <path stroke-linejoin="round" stroke-linecap="round" stroke-width="3" stroke="#A8B4E5" d="m25,9.5l-23,0m0,0l7.81132,7.5m-7.81132,-7.5l7.81132,-7.5"/>
+  </g>
+ </g>
+</svg>
