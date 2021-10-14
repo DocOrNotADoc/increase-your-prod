@@ -1084,7 +1084,7 @@ body {
             gap: $fz-subttl;
             .image-link {
               &--b {
-                grid-row: 1;
+                grid-row: 1 / 2;
               }
             }
           }
@@ -1124,6 +1124,7 @@ body {
             .image-link {
               img {
                 height: auto;
+                margin-bottom: -4px;
               }
             }
           }
@@ -1282,13 +1283,13 @@ body {
       }
     }
   }
-  @media (max-width: $breakpoint-sm-max) {
-    &__item {
-      &-wrapper {
-        // width: 92%;
-      }
-    }
-  }
+  // @media (max-width: $breakpoint-sm-max) {
+  //   &__item {
+  //     &-wrapper {
+  //       // width: 92%;
+  //     }
+  //   }
+  // }
   @media (max-width: $breakpoint-xs-max) {
     margin-top: $base*8;
   }
